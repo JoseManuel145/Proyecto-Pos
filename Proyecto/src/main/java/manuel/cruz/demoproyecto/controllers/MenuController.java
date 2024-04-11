@@ -6,16 +6,12 @@ import javafx.scene.input.MouseEvent;
 import manuel.cruz.demoproyecto.App;
 
 public class MenuController {
-
     @FXML
     private Button inventarioButton;
-
     @FXML
     private Button ticketsButton;
-
     @FXML
     private Button ventaButton;
-
     @FXML
     void onMouseClickedInventarioButton(MouseEvent event){
         App.nuevaVentana(event, "/manuel/cruz/demoproyecto/inventario/menu-inventario","Inventario");

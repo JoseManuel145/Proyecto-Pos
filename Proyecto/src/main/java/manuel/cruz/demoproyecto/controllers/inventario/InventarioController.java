@@ -12,15 +12,22 @@ import manuel.cruz.demoproyecto.models.Producto;
 public class InventarioController {
     @FXML
     private ListView<String> listProduct;
-
     @FXML
     private Button agregarButton;
-
     @FXML
     private Button eliminarButton;
-
     @FXML
     private Button volverButton;
+    public void onMouseClickedAgregarButton(MouseEvent event){
+        App.nuevaVentana(event, "/manuel/cruz/demoproyecto/inventario/agregarP-inventario", "Categoria del producto");
+    }
+
+    public void onMouseClickedEliminarButton(MouseEvent event){
+        App.nuevaVentana(event,"/manuel/cruz/demoproyecto/inventario/eliminarP-inventario", "Categoria del producto");
+    }
+    public void onMouseClickedVolverButton(MouseEvent event){
+        App.nuevaVentana(event, "menu-principal", "Menu principal");
+    }
     @FXML
     public void initialize() {
         Inventario inventario = App.getInventario();
@@ -30,15 +37,5 @@ public class InventarioController {
         for (Producto producto : inventario.getProductos()) {
             listProduct.getItems().add(producto.toString());
         }
-    }
-
-    public void onMouseClickedAgregarButton(MouseEvent event){
-        App.nuevaVentana(event, "/manuel/cruz/demoproyecto/inventario/agregarP-inventario", "Categoria del producto");
-    }
-    public void onMouseClickedEliminarButton(MouseEvent event){
-        App.nuevaVentana(event,"/manuel/cruz/demoproyecto/inventario/eliminarP-inventario", "Categoria del producto");
-    }
-    public void onMouseClickedVolverButton(MouseEvent event){
-        App.nuevaVentana(event, "menu-principal", "Menu principal");
     }
 }

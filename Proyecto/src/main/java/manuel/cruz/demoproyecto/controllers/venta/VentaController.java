@@ -17,16 +17,12 @@ public class VentaController {
     private Label cajaTotal;
     @FXML
     private ListView <String> productosVender;
-
     @FXML
     private Button agregPButton;
-
     @FXML
     private Button elimPButton;
-
     @FXML
     private Button venderButton;
-
     @FXML
     private Button volverButton;
     @FXML
@@ -48,7 +44,6 @@ public class VentaController {
     public void onMouseClickedVenderButton() {
         venta = App.getVenta();
 
-        // Verificar si la lista de productos a vender está vacía
         if (venta.vacio()) {
             App.showAlert(Alert.AlertType.ERROR, "Error", "No hay productos agregados para vender.");
             return;
@@ -56,7 +51,6 @@ public class VentaController {
 
         String input =  txtDineroIngreso.getText();
 
-        // Verificar si el campo de dinero ingresado está vacío
         if (input.isEmpty()) {
             App.showAlert(Alert.AlertType.ERROR, "Error", "Ingrese el dinero primero");
             return;
@@ -77,9 +71,5 @@ public class VentaController {
     public void onMouseClickedVolverButton(MouseEvent event){
         App.nuevaVentana(event, "menu-principal", "Menu principal");
 
-    }
-
-    public double getCambio() {
-        return cambio;
     }
 }

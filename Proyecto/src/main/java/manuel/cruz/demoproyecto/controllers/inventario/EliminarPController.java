@@ -8,13 +8,10 @@ import javafx.scene.input.MouseEvent;
 import manuel.cruz.demoproyecto.App;
 
 public class EliminarPController {
-
     @FXML
     private Button eliminarButton;
-
     @FXML
     private TextField txtIdEliminar;
-
     @FXML
     private Button volverButton;
     public void onMouseClickedEliminarButton(){
@@ -26,7 +23,6 @@ public class EliminarPController {
             App.showAlert(Alert.AlertType.ERROR, "Eliminar", "No se encontro el producto");
         }
     }
-
     public void onMouseClickedVolverButton(MouseEvent event){
         App.nuevaVentana(event, "/manuel/cruz/demoproyecto/inventario/menu-inventario","Inventario");
     }

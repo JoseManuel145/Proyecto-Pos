@@ -17,14 +17,6 @@ public class BuscarTicketController {
     private TextField txtIdBuscar;
     @FXML
     private Button buscarButton;
-    public Ticket buscarTicket(String id) {
-        for (Ticket ticket : App.getTicket().getTickets()) {
-            if (id.equals(String.valueOf(ticket.getId()))) {
-                return ticket;
-            }
-        }
-        return null;
-    }
     public void onMouseClickedBuscarButton(){
         String idBuscar = txtIdBuscar.getText();
         Ticket ticketEncontrado = buscarTicket(idBuscar);
@@ -36,5 +28,13 @@ public class BuscarTicketController {
     }
     public void onMouseClickedVolverButton(MouseEvent event){
         App.nuevaVentana(event, "/manuel/cruz/demoproyecto/ticket/menu-ticket", "Elige tipo de producto");
+    }
+    public Ticket buscarTicket(String id) {
+        for (Ticket ticket : App.getTicket().getTickets()) {
+            if (id.equals(String.valueOf(ticket.getId()))) {
+                return ticket;
+            }
+        }
+        return null;
     }
 }

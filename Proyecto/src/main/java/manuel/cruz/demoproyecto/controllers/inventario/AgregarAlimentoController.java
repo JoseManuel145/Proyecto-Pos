@@ -32,13 +32,10 @@ public class AgregarAlimentoController {
         String caducidad = txtFecha.getText();
         String precioStr = txtPrecio.getText();
 
-        // Validar que los campos no estén vacíos
         if (nombre.isEmpty() || cantidadStr.isEmpty() || caducidad.isEmpty() || precioStr.isEmpty()) {
             App.showAlert(Alert.AlertType.ERROR, "Error", "Todos los campos son obligatorios.");
             return;
         }
-
-        // Validar que la cantidad y el precio sean números válidos
         int cantidad;
         double precio;
         try {
@@ -49,13 +46,11 @@ public class AgregarAlimentoController {
             return;
         }
 
-        // Validar que la cantidad y el precio sean positivos
         if (cantidad <= 0 || precio <= 0) {
             App.showAlert(Alert.AlertType.ERROR, "Error", "Cantidad y Precio deben ser mayores que cero.");
             return;
         }
 
-        // Si todos los campos son válidos, agregar el producto al inventario
         Producto productoBeta = new Producto();
         String id = productoBeta.genId();
         ProductoAlimento alimento = new ProductoAlimento(id, nombre, cantidad, precio, caducidad);
@@ -64,9 +59,6 @@ public class AgregarAlimentoController {
 
         if (productoAgregado) {
             App.showAlert(Alert.AlertType.INFORMATION, "Producto Agregado", "El producto se agregó correctamente.");
-        } else {
-            App.showAlert(Alert.AlertType.ERROR, "Error", "No se pudo agregar el producto.");
         }
     }
-
 }

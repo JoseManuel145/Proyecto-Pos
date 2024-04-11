@@ -8,7 +8,6 @@ import javafx.scene.input.MouseEvent;
 import manuel.cruz.demoproyecto.App;
 
 public class AgregarVenta {
-
     @FXML
     private Button agregaPButton;
     @FXML
@@ -24,7 +23,6 @@ public class AgregarVenta {
             App.showAlert(Alert.AlertType.ERROR, "Producto Agregado", "Error al agregar producto.\nNo se encontro el producto o no hay suficiente Stock.");
         }
     }
-
     public void onMouseClickedVolverButton(MouseEvent event){
         App.nuevaVentana(event,"/manuel/cruz/demoproyecto/venta/menu-venta","Punto de Venta");
     }

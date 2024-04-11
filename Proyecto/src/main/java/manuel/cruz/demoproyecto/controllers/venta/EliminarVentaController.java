@@ -8,13 +8,10 @@ import javafx.scene.input.MouseEvent;
 import manuel.cruz.demoproyecto.App;
 
 public class EliminarVentaController {
-
     @FXML
     private Button elimPVentaButton;
-
     @FXML
     private TextField txtElimId;
-
     @FXML
     private Button volverButton;
     public void onMouseClickedEliminarButton(){

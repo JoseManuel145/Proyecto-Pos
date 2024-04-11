@@ -11,24 +11,22 @@ import java.util.ArrayList;
 public class TicketController {
     @FXML
     private ListView <String> listTicket;
-
     @FXML
     private Button mostrarTicketButton;
-
     @FXML
     private Button volverButton;
 
+    public void onMouseClickedMostrarButton(MouseEvent event){
+        App.nuevaVentana(event,"/manuel/cruz/demoproyecto/ticket/buscar-ticket", "Busca un Ticket");
+    }
+    public void onMouseClickedVolverButton(MouseEvent event){
+        App.nuevaVentana(event, "/manuel/cruz/demoproyecto/menu-principal", "Menu principal");
+    }
     @FXML
     public void initialize() {
         ArrayList<Ticket> tickets = App.getTicket().getTickets();
         for (Ticket ticket: tickets){
             listTicket.getItems().add(ticket.imprimirTicket());
         }
-    }
-    public void onMouseClickedMostrarButton(MouseEvent event){
-        App.nuevaVentana(event,"/manuel/cruz/demoproyecto/ticket/buscar-ticket", "Busca un Ticket");
-    }
-    public void onMouseClickedVolverButton(MouseEvent event){
-        App.nuevaVentana(event, "/manuel/cruz/demoproyecto/menu-principal", "Menu principal");
     }
 }
