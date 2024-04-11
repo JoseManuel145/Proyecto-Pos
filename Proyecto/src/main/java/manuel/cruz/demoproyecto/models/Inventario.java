@@ -4,11 +4,9 @@ import java.util.ArrayList;
 
 public class Inventario {
     private ArrayList <Producto> productos = new ArrayList<>();
-
     public ArrayList<Producto> getProductos() {
         return productos;
     }
-
     public boolean addProduct(Producto producto){
         return productos.add(producto);
     }
@@ -37,7 +35,6 @@ public class Inventario {
             producto.setCantidad(producto.getCantidad() - 1);
         }
     }
-
     public void aumentarStock(String id) {
         Producto producto = getProductoPorId(id);
         if (producto != null) {

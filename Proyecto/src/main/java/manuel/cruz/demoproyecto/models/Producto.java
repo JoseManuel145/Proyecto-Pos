@@ -17,20 +17,17 @@ public class Producto {
         this.cantidad = cantidad;
         this.precio = precio;
     }
-
     public String getId() {
         return id;
     }
-
     public String getNombre() {
         return nombre;
     }
-
-    public double getPrecio() {
-        return precio;
-    }
     public int getCantidad() {
         return cantidad;
+    }
+    public double getPrecio() {
+        return precio;
     }
 
     public void setCantidad(int cantidad) {

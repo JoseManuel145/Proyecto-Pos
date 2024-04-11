@@ -8,22 +8,19 @@ public class Venta {
     double total;
     ArrayList<Producto> productosVender = new ArrayList<>();
 
+
     public Venta(Inventario inventario) {
         this.inventario = inventario;
     }
-
     public ArrayList<Producto> getProductosVender() {
         return productosVender;
     }
-
     public boolean vacio() {
         return productosVender.isEmpty();
     }
-
     public double getTotal() {
         return total;
     }
-
     public boolean agregarProducto(String id) {
         boolean agregado = false;
         Producto productoEnInventario = inventario.getProductoPorId(id);
@@ -34,14 +31,12 @@ public class Venta {
         }
         return agregado;
     }
-
     public boolean eliminarProducto(String idDel) {
         boolean eliminado;
         eliminado=productosVender.removeIf(producto -> idDel.equals(producto.getId()));
         inventario.aumentarStock(idDel);
         return eliminado;
     }
-
     public double calcularTotal() {
         total = 0;
         for (Producto producto : productosVender) {

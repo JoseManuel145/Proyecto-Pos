@@ -42,11 +42,9 @@ import java.util.ArrayList;
 
         public String imprimirTicket() {
             DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
-
             return id + "   " + dtf.format(fechaCreacion) + "    $" + total;
         }
         public String imprimirTicketConPrecio() {
-            VentaController ventaController = new VentaController();
             StringBuilder ticketInfo = new StringBuilder();
             ticketInfo.append("Título: Ticket de Venta\n");
             ticketInfo.append("ID del Ticket: ").append(id).append("\n");
