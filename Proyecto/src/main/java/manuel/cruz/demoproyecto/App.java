@@ -44,25 +44,6 @@ public class App extends Application {
         stage.centerOnScreen();
         stage.show();
     }
-    public static void newStage(String fxml, String title) {
-        Stage stageView = new Stage();
-        Scene scene;
-        try {
-            scene = new Scene(loadFXML(fxml));
-            stageView.setTitle(title);
-            stageView.setScene(scene);
-            stageView.centerOnScreen();
-            stageView.initOwner(stageRoot);
-            stageView.initModality(Modality.APPLICATION_MODAL);
-            stageView.showAndWait();
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-    }
-    private static Parent loadFXML(String fxml) throws IOException {  //Mandar a llamar las interfaces
-        FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource(fxml + ".fxml"));
-        return fxmlLoader.load();
-    }
     public static void nuevaVentana(MouseEvent event, String fxmlFile, String stageTitle) {
         Stage stage = new Stage();
         FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource(fxmlFile + ".fxml"));
