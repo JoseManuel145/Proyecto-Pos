@@ -3,7 +3,14 @@ package manuel.cruz.demoproyecto.models;
 import java.util.ArrayList;
 
 public class Inventario {
+    private ArrayList <Ticket> tickets = new ArrayList<>();
     private ArrayList <Producto> productos = new ArrayList<>();
+    public ArrayList<Ticket> getTickets() {
+        return tickets;
+    }
+    public void agregarTicket(Ticket ticket){
+        tickets.add(ticket);
+    }
     public ArrayList<Producto> getProductos() {
         return productos;
     }

@@ -8,10 +8,8 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
-import javafx.stage.Modality;
 import javafx.stage.Stage;
 import manuel.cruz.demoproyecto.models.Inventario;
-import manuel.cruz.demoproyecto.models.Ticket;
 import manuel.cruz.demoproyecto.models.Venta;
 
 import java.io.IOException;
@@ -21,21 +19,14 @@ public class App extends Application {
     public static Inventario getInventario() {
         return inventario;
     }
-    private static Venta venta = new Venta(inventario);
+    private static Venta venta = new Venta();
 
     public static Venta getVenta() {
         return venta;
     }
-    private static Ticket ticket = new Ticket();
 
-    public static Ticket getTicket() {
-        return ticket;
-    }
-
-    private static Stage stageRoot;
     @Override
     public void start(Stage stage) throws IOException {
-        stageRoot = stage;
         FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("menu-principal.fxml"));
         Parent root = fxmlLoader.load();
         Scene scene = new Scene(root);

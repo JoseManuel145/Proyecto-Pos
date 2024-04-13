@@ -24,7 +24,7 @@ public class TicketController {
     }
     @FXML
     public void initialize() {
-        ArrayList<Ticket> tickets = App.getTicket().getTickets();
+        ArrayList<Ticket> tickets = App.getInventario().getTickets();
         for (Ticket ticket: tickets){
             listTicket.getItems().add(ticket.imprimirTicket());
         }

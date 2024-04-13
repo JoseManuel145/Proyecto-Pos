@@ -1,8 +1,5 @@
 package manuel.cruz.demoproyecto.models;
 
-import manuel.cruz.demoproyecto.App;
-import manuel.cruz.demoproyecto.controllers.venta.VentaController;
-
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
@@ -12,19 +9,10 @@ import java.util.ArrayList;
         private static int nextId = 0;
         private int id;
         private ArrayList<Producto> productosVendidos;
-        private ArrayList<Ticket> tickets = new ArrayList<>();
         private LocalDateTime fechaCreacion;
-        public void agregarTicket(Ticket ticket){
-            tickets.add(ticket);
-        }
-
-        public ArrayList<Ticket> getTickets() {
-            return tickets;
-        }
 
         public Ticket() {
         }
-
         public Ticket(double total) {
             this.total = total;
             this.id = ++nextId;
@@ -58,8 +46,6 @@ import java.util.ArrayList;
 
             return ticketInfo.toString();
         }
-
-
 
     }
 

@@ -30,7 +30,7 @@ public class BuscarTicketController {
         App.nuevaVentana(event, "/manuel/cruz/demoproyecto/ticket/menu-ticket", "Elige tipo de producto");
     }
     public Ticket buscarTicket(String id) {
-        for (Ticket ticket : App.getTicket().getTickets()) {
+        for (Ticket ticket : App.getInventario().getTickets()) {
             if (id.equals(String.valueOf(ticket.getId()))) {
                 return ticket;
             }

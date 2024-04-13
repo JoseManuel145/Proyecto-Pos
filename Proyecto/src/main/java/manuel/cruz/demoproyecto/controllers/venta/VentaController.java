@@ -63,7 +63,7 @@ public class VentaController {
             App.showAlert(Alert.AlertType.ERROR, "Error", "Ingrese un valor numérico válido para el dinero");
         }
         Ticket nuevoTicket = venta.finalizarVenta();
-        App.getTicket().agregarTicket(nuevoTicket);
+        App.getInventario().agregarTicket(nuevoTicket);
     }
     public void onMouseClickedEliminarButton(MouseEvent event){
         App.nuevaVentana(event, "/manuel/cruz/demoproyecto/venta/eliminarP-venta", "Elimina un producto");

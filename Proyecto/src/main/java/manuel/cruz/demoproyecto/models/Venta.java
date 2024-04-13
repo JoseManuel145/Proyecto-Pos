@@ -1,17 +1,12 @@
 package manuel.cruz.demoproyecto.models;
 
+import manuel.cruz.demoproyecto.App;
+
 import java.util.ArrayList;
 
 public class Venta {
-
-    Inventario inventario;
     double total;
     ArrayList<Producto> productosVender = new ArrayList<>();
-
-
-    public Venta(Inventario inventario) {
-        this.inventario = inventario;
-    }
     public ArrayList<Producto> getProductosVender() {
         return productosVender;
     }
@@ -22,6 +17,7 @@ public class Venta {
         return total;
     }
     public boolean agregarProducto(String id) {
+        Inventario inventario = App.getInventario();
         boolean agregado = false;
         Producto productoEnInventario = inventario.getProductoPorId(id);
         if (productoEnInventario != null && productoEnInventario.getCantidad() > 0) {
@@ -32,6 +28,7 @@ public class Venta {
         return agregado;
     }
     public boolean eliminarProducto(String idDel) {
+        Inventario inventario = App.getInventario();
         boolean eliminado;
         eliminado=productosVender.removeIf(producto -> idDel.equals(producto.getId()));
         inventario.aumentarStock(idDel);
